@@ -3,6 +3,8 @@ import 'package:epic_rps/views/intro_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+late var mq;
+
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => PlayersList(), child: const MyApp()),
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    mq = MediaQuery.of(context).size;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
