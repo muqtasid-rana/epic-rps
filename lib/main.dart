@@ -1,9 +1,12 @@
-import 'package:epic_rps/screens/home_screen.dart';
-import 'package:epic_rps/screens/intro_screen.dart';
+import 'package:epic_rps/view_models/players_list.dart';
+import 'package:epic_rps/views/intro_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => PlayersList(), child: const MyApp()),
+  ]));
 }
 
 class MyApp extends StatelessWidget {
